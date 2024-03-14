@@ -14,3 +14,10 @@ export default {
   plugins: [require("daisyui")],  
 }
 
+module.exports = {
+  //...
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
+}
+
