@@ -3,7 +3,7 @@
   <aside class="flex h-screen w-20 flex-col items-center border-r border-gray-200 bg-white">
   
     <nav class="flex flex-1 flex-col gap-y-4 pt-10">
-           <a href="#" class="text-gary-400 group relative rounded-xl p-2 hover:bg-gray-50">
+           <a href="#" class="text-gary-400 group relative rounded-xl p-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
@@ -15,13 +15,13 @@
         <div class="absolute inset-y-0 left-12 hidden items-center group-hover:flex">
           <div class="relative whitespace-nowrap rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 drop-shadow-lg">
             <div class="absolute inset-0 -left-1 flex items-center">
-              <div class="h-2 w-2 rotate-45 bg-white"></div>
+             
             </div>
              <span class="text-gray-400"></span>
           </div>
         </div>
       </a>
-      <a href="#" class="group relative rounded-xl bg-gray-100 p-2 hover:bg-gray-50">
+      <a href="koleksibuku/colbook" class="group relative rounded-xl bg-gray-50 p-2 hover:bg-gray-50">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-books">
@@ -40,11 +40,11 @@
             <div class="absolute inset-0 -left-1 flex items-center">
               <div class="h-2 w-2 rotate-45 bg-white"></div>
             </div>
-            Koleksi Buku <span class="text-gray-400">(Y)</span>
+            Koleksi Buku <span class="text-gray-400"></span>
           </div>
         </div>
       </a>
-      <a href="#" class="text-gary-400 group relative rounded-xl p-2 hover:bg-gray-50">
+      <a href="buku/hdr/" class="text-gary-400 group relative rounded-xl p-2 hover:bg-gray-50">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-device-ipad-search">
@@ -64,7 +64,7 @@
           </div>
         </div>
       </a>
-      <a href="#" class="text-gary-400 group relative rounded-xl p-2 hover:bg-gray-50">
+      <a href="pengunjung/" class="text-gary-400 group relative rounded-xl p-2 hover:bg-gray-50">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-file-description">
@@ -85,10 +85,6 @@
         </div>
       </a>
    
-    </nav>
-
-    
+    </nav>  
   </aside>
-
-
 </template>

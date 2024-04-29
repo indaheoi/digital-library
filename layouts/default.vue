@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <Header />
+    <div data-theme="light">
+
         <slot />
+
     </div>
 </template>
 

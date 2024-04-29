@@ -12,12 +12,16 @@ export default {
     extend: {},
   },
   plugins: [require("daisyui")],  
-}
-
-module.exports = {
-  //...
   daisyui: {
-    themes: ["light", "dark", "cupcake"],
+    themes: ["light", "dark", "cupcake", "cyberpunk", "coffee", 
+    "winter", "sunset", "pastel", "valentine", "nord"],
   },
 }
+
+// module.exports = {
+//   //...
+//   daisyui: {
+//     themes: ["light", "dark", "cupcake"],
+//   },
+// }
 
