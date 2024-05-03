@@ -1,19 +1,18 @@
 <template>
-    <div class="navbar">
-        <div class="logo ml-4">
-            <img src="assets\img\logosmk4.jpg" width="40px">
-        </div>
-        <div class="text">
-            <a class="text-2xl text-gray-900 font-semibold mx-7 ">Perpustakaan Digital SMKN 4 Tasikmalaya</a>
-        </div>    
+  <div class="navbar bg-fixed border-gray border-b-2">
+      <div class="logo ml-24">
+        <img src="assets\img\logosmk4.jpg" width="40px" >  
     </div>
+  <div class="text">
+      <a class="text-2xl text-gray-900 font-semibold mt-2 ms-8 ">Perpustakaan Digital SMKN 4 Tasikmalaya</a>
+      </div>    
+      </div>
 
   <div data-theme="light" class="max-w-full">
 
 
-    <div class=" flex ">
-      <Sidebar/>
-    <div class="md:flex md:justify-between md:px-24 px-5 mt-10 gap-10">
+    <div class=" flex h-[100vh] ps-36" style="background-color: #EAE8FF;">
+    <div class="md:flex md:justify-between md:ps-14 px-5 mt-10 gap-10 py-10">
 
       <div class="card w-[600px] bg-base-100 h-[400px] shadow-xl max-w-full ">
         <figure><img src="~/assets\img\bg-home-kunjungan.jpg" alt="kunjungan" /></figure>
@@ -70,6 +69,7 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Jomolhari&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 .card-body {
   height: 100px;
   margin-left: 30px;
@@ -77,10 +77,21 @@
 }
 
 .navbar {
-
+  /* box-shadow: 2px 2px 7px #737373; */
   width: 100%;
+}
+a{
+  font-family: "Josefin Sans", sans-serif;
+  /* text-shadow: 1px 1px 2px #737373; */
+  
+}
+
+h2 {
+  font-family:"Jomolhari", serif;
+  /* font-size: large; */
 
 }
 
-
 </style>
+
+
