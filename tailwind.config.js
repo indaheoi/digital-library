@@ -40,7 +40,9 @@ export default {
       'navy': '#2D3142',
       'lavender': '#EAE8FF',
       'gray':'#a3a3a3',
-      'darkgray':'#737373'
+      'darkgray':'#737373',
+      'lightgray':'#D9D9D9',
+      'black':'000000'
     },
 }
 }

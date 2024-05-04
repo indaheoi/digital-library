@@ -1,6 +1,6 @@
 <template>
   
-  <aside class="flex h-screen w-20 flex-col items-center border-r border-gray bg-white fixed">
+  <aside class="flex h-screen w-20 flex-col items-center bg-white fixed  shadow-inner shadow-darkgray">
     
     <nav class="flex flex-1 flex-col gap-y-4 pt-10">
    

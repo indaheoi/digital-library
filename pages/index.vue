@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-fixed border-gray border-b-2">
+  <div class="navbar bg-fixed shadow-darkgray">
       <div class="logo ml-24">
         <img src="assets\img\logosmk4.jpg" width="40px" >  
     </div>
@@ -14,7 +14,7 @@
     <div class=" flex h-[100vh] ps-36" style="background-color: #EAE8FF;">
     <div class="md:flex md:justify-between md:ps-14 px-5 mt-10 gap-10 py-10">
 
-      <div class="card w-[600px] bg-base-100 h-[400px] shadow-xl max-w-full ">
+      <div class="card w-[600px] bg-base-100 h-[400px] shadow-inner shadow-darkgray max-w-full ">
         <figure><img src="~/assets\img\bg-home-kunjungan.jpg" alt="kunjungan" /></figure>
         <div class="card-body">
           <h2 class="card-title">Kunjungan</h2>
@@ -39,7 +39,7 @@
           </div>
     </div>
     
-          <div class="card card-compact h-[400px] w-[600px] bg-base-100 max-w-full shadow-xl">
+          <div class="card card-compact h-[400px] w-[600px] bg-base-100 max-w-full  shadow-inner shadow-darkgray">
             <figure><img src="~/assets\img\bg-home-cari-buku.jpg" alt="Pencarian buku" /></figure>
             <div class="card-body">
               <h2 class="card-title">Pencarian Buku</h2>

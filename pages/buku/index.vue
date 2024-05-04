@@ -1,7 +1,7 @@
 <template>
        <div class="navbar bg-fixed, border-y border-gray">
         <div class="text ms-20 ps-10">
-             <a class="text-2xl text-darkgray">Pencarian Buku</a>
+             <a class="text-2xl mt-2 text-gray">Pencarian Buku</a>
          </div>    
         </div>
 
@@ -54,6 +54,8 @@
         </div>
     </div>
 </form> -->
+
+
 <div class="content py-20 " style="background-color: #EAE8FF; height: 100vh;">
     <div class="max-w-2xl mx-auto">
     <div id="default-carousel" class="relative rounded-lg overflow-hidden shadow-lg" data-carousel="static">
@@ -119,5 +121,7 @@
 </script>
 
 <style scoped>
-
+a{
+    font-family: "Josefin Sans", sans-serif;
+}
 </style>
