@@ -47,12 +47,11 @@
                     </select>
                 </div>
                 <div class="sm:col-span-2">
-                    <select v-model="form.rombel" :disabled="!jurusan || jurusan=='TOI'" id="rombel" name="rombel" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-center" required="">
-                        <option value="" disabled selected>Kelas</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option v-if="!(jurusan=='DKV')" value="3">3</option>
-                        <option v-if="!(jurusan=='DKV')" value="4">4</option>
+                    <select v-model="form.rombel" id="rombel" name="rombel" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-center" required="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                     </select>
                 </div>
                 </div>

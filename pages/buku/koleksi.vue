@@ -6,56 +6,89 @@
 </div>
 
 <div class="p-5 ps-18 bg-lavender">
-    <form action="/search" method="GET">
-    <label for="search" class="sr-only">Search</label>
-    <div class="relative max-h-full max-w-4xl mx-72 ">
-      <div class="absolute inset-y-0 left-0 pl-3  flex items-center pointer-events-none">
-        <svg class="h-5 w-5 text-gray-500 py-10" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-        </svg>
-  </div>
-  <div>
-  <input type="text" name="query" id="search" class="block pl-10 pr-3 py-2 border h-[50px] w-[1000px] border-gray rounded-md leading-5 bg-white shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-lg" placeholder="Cari buku...">
-  <!-- component -->
-<main class=" p-2 text-zinc-500 flex items-center justify-end">
-    <button
-      class="relative group transition-all duration-200 focus:overflow-visible w-max h-max p-2 overflow-hidden flex flex-row items-center justify-center bg-white gap-2 rounded-lg border border-zinc-200">
-      <span>
-      Kategori
-      </span>
-      <svg class="rotate-90 group-focus:rotate-180" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-        viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="m12 10.8l-3.9 3.9q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7l4.6-4.6q.3-.3.7-.3t.7.3l4.6 4.6q.275.275.275.7t-.275.7q-.275.275-.7.275t-.7-.275z" />
-      </svg>
-      <div
-        class="absolute shadow-lg -bottom-40 left-0 w-full h-max p-2 bg-white border border-zinc-200 rounded-lg flex flex-col gap-2">
-        <span class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg">
-          <p>Agama</p>
-        </span>
-        <span class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg">
-          <p>Sosial</p>
-        </span>
-        <span class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg">
-          <p>Bahasa</p>
-        </span>
+  <form class="flex flex-col md:flex-row gap-3">
+    <div class="flex bg-white w-[750px] h-[70px] px-10 ms-96 rounded-3xl shadow-inner border-slate-800 border-b-2">
+      <div type="submit" class="p-1 border-2 bg-gray shadow-inner text-white font-bold my-2 px-3 rounded-full focus:outline-none focus:shadow-outline">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-10"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
       </div>
-    </button>
-  </main>
+      <input type="text" placeholder="Search for the tool you like" class="w-[750px] h-[60px] px-3 rounded-l focus:outline-none">
+      <!-- <button type="submit" class="bg-sky-500 text-white rounded-r px-2 md:px-3 py-0 md:py-1">Search</button> -->
+      <select id="pricingType" name="pricingType"
+        class="w-[140px] h-[40px] border border-indigo-950 mt-4 focus:outline-none rounded-2xl px-2 md:px-3 py-0 md:py-1 tracking-wider">
+        <option value="All" select="">All</option>
+        <option value="Freemium">Freemium</option>
+        <option value="Free">Free</option>
+        <option value="Paid">Paid</option>
+      </select>
+    </div>
+  </form>
 
 
-  
-  <div class="card w-[300px] bg-base-100 h-[400px] shadow-inner shadow-darkgray max-w-full ">
-    
-  </div>
+<!-- card -->
+ <div class="grid grid-cols-4 gap-4 ps-24 z-0 pt-10 ">
+     <div v-for="(book, i) in bookFiltered" :key='i' class="">
+         <div class="card bg-white shadow m-2 w-80 h-[460px]">
+             <div class="card-body pt-0">
+                 <figure><img :src="book.cover" alt="" class="h-[300px] w-[100%]"></figure>
+                 <p>{{ book.judul }}</p>
+                 <div class="rating justify-center">
+                    <input type="radio" name="rating-1" class="mask mask-star" />
+                    <input type="radio" name="rating-1" class="mask mask-star" checked />
+                    <input type="radio" name="rating-1" class="mask mask-star" />
+                    <input type="radio" name="rating-1" class="mask mask-star" />
+                    <input type="radio" name="rating-1" class="mask mask-star" />
+                    <!-- <p class="mask mask-half-1">5.0</p> -->
+                </div>
+                 <NuxtLink :to="`/buku/${book.id}`">
+                     <button class="btn btn-block bg-navy text-white btn-sm ">Lihat Buku</button>
+                 </NuxtLink>
+             </div>
+         </div>  
+     </div>
+ </div>
 
-  </div>
-  
-</div>
-</form>
-</div>
-
-
-
+ </div>
+<!-- <div v-for="(book, i) in bookFiltered :key='i'" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <a href="#">
+        <img class="rounded-t-lg" :src="book.cover" alt="" />
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Read more
+             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
+    </div>
+</div> -->
 
 </template>
+
+<script setup>
+const supabase = useSupabaseClient()
+const books = ref([])
+const keyword = ref('')
+
+const getBooks = async () => {
+    const {data, error} = await supabase.from('buku')
+    .select(`*,kategori(*)`)
+    .ilike('judul', `%${keyword.value}%`)
+    if (data) books.value = data
+}
+const bookFiltered = computed (() => {
+    return books.value.filter((b) => {
+        return (
+            b.judul?.toLowerCase().includes(keyword.value?.toLowerCase()) ||
+            b.kategori?.nama.toLowerCase().includes(keyword.value?.toLowerCase())
+        )
+    })
+}) 
+
+onMounted(() => {
+    getBooks()
+}) 
+</script>
