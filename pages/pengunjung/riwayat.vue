@@ -48,13 +48,13 @@
     </div>
   </div>
 
-  <div class="w-screen bg-lavender ">
+
                 <NuxtLink to="/pengunjung/"><button class="btn btn-circle ml-24 shadow-inner shadow-darkgray">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
                   </svg>               
                 </button></NuxtLink>
-    </div>
+  
 </template>
 
 <script setup>
@@ -63,7 +63,7 @@ const supabase = useSupabaseClient ()
 const visitors = ref([])
 
 const getPengunjung = async () => {
-  const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
+  const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`).order('id',{ascending:false})
   if(data) visitors.value = data
 
 } 
@@ -71,6 +71,7 @@ const getPengunjung = async () => {
     getPengunjung()
   })
    
+
 
 </script>
 

@@ -43,7 +43,7 @@
         </table>
       </div>
 
-      <div class=" ">
+        <div class=" ">
             <NuxtLink to="/buku/">
               <button class="btn btn-circle ml-10 mt-32 shadow-inner shadow-darkgray">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -51,11 +51,11 @@
               </svg>               
             </button>
           </NuxtLink>
-          </div>
-          <div class="grid grid-rows-2 card w-[250px] bg-base-100 h-[100px] shadow-inner px-5 mb-4 shadow-darkgray max-w-full " style="margin-left: 400px;">
+        </div>
+        <div class="grid grid-rows-2 card w-[250px] bg-base-100 h-[100px] shadow-inner px-5 mb-4 shadow-darkgray max-w-full " style="margin-left: 400px;">
             <div class="text">
               <a class="text-md text-navy font-semibold mt-5 js">Rating Buku yang sudah kamu baca ᵔ ᵕ ᵔ </a>
-      </div>    
+        </div>    
             <div class="rating py-3 justify-center">
               <input type="radio" name="rating-1" class="mask mask-star" />
           <input type="radio" name="rating-1" class="mask mask-star" checked />
