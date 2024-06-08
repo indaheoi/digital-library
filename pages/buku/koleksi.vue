@@ -111,4 +111,9 @@ onMounted(() => {
 .navbar{
     font-family: "Josefin Sans", sans-serif;
 }
+
+.card{
+    font-family: "Josefin Sans", sans-serif;
+   
+}
 </style>
