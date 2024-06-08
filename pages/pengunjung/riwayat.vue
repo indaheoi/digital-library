@@ -5,8 +5,8 @@
       <div class="mx-auto max-w-lg">
 
 
-        <form action="" class="mx-auto max-w-[2000px] ">
-          <input type="search" 
+        <form @submit.prevent="getPengunjung" class="mx-auto max-w-[2000px] ">
+          <input v-model="keyword" 
                 class="peer cursor-pointer relative z-10 h-8 w-8 rounded-full  bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-300 focus:pl-10 focus:pr-4 " />
           <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500 " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" >
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -32,7 +32,7 @@
           </tr>
         </thead>
       <tbody class="text-gray-700 ">
-        <tr v-for = "(visitor, i) in visitors" :key="i">
+        <tr v-for = "(visitor, i) in pengunjungFiltered" :key="i">
           <td class="text-center py-3 px-4 bg-[#d9d9d9] border-t border-e">{{ i+1 }}</td>
           <td class="w-1/3 text-center py-3 px-4 bg-[#AAC7D7] border-t border-x" >{{ visitor?.keanggotaan?.nama }}</td>
           <td class="text-center py-3 px-4 bg-[#d9d9d9] border-t border-x"><a class="hover:text-blue-500" >{{ visitor?.nama }}</a></td>
@@ -61,14 +61,28 @@
 const supabase = useSupabaseClient ()
 
 const visitors = ref([])
+const keyword = ref('')
 
 const getPengunjung = async () => {
   const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`).order('id',{ascending:false})
   if(data) visitors.value = data
 
 } 
+
+
+const pengunjungFiltered = computed (() => {
+    return visitors.value.filter((b) => {
+        return (
+            b.nama?.toLowerCase().includes(keyword.value?.toLowerCase()) ||
+            b.keanggotaan?.nama.toLowerCase().includes(keyword.value?.toLowerCase())
+            
+        )
+    })
+}) 
+
   onMounted(() => {
     getPengunjung()
+
   })
    
 

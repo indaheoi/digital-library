@@ -27,10 +27,10 @@
  <div class="grid grid-cols-4 gap-4 ps-24 z-0 pt-10 ">
      <div v-for="(book, i) in bookFiltered" :key='i' class="">
          <div class="card bg-white shadow m-2 w-80 h-[460px]">
-             <div class="card-body pt-0">
+             <div class="card-body pt-0 text-center">
                  <figure><img :src="book.cover" alt="" class="h-[300px] w-[100%]"></figure>
                  <p>{{ book.judul }}</p>
-                 <div class="rating justify-center">
+                 <div class="rating justify-center pb-1">
                     <input type="radio" name="rating-1" class="mask mask-star" />
                     <input type="radio" name="rating-1" class="mask mask-star" checked />
                     <input type="radio" name="rating-1" class="mask mask-star" />
@@ -108,4 +108,7 @@ onMounted(() => {
     font-family: "Josefin Sans", sans-serif;
 }
 
+.navbar{
+    font-family: "Josefin Sans", sans-serif;
+}
 </style>

@@ -5,18 +5,22 @@
     </div>
 </div>
 <div class="p-5 ps-18 bg-lavender">
-    <form @submit.prevent="getBooks" autocomplete="off">
-        <label for="search" class="sr-only">Search</label>
-        <div class="relative max-h-full max-w-4xl mx-72 ">
-            <div class="absolute inset-y-0 left-0 pl-3  flex items-center">
-                <svg class="h-5 w-5 text-gray-500 py-10" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-                </svg>
-            </div>
-            <input type="text" v-model="keyword" id="search" class="block pl-10 pr-3 py-2 border h-[50px] w-[1000px] border-gray rounded-md leading-5 bg-white shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-lg" placeholder="Cari buku...">
-        </div>
-    </form>
-</div>
+  <form @submit.prevent="getBooks" class="flex flex-col md:flex-row gap-3">
+    <div class="flex bg-white w-[950px] h-[60px] px-6 ms-80 rounded-md shadow-inner border-b-2 border-gray ">
+      <div type="submit" class="p-1 bg-lightgray opacity-70 text-dark my-2 px-3 rounded-full focus:outline-none focus:shadow-outline">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-10"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </div>
+      <input v-model="keyword" type="text" placeholder="Cari buku..." class="text-2xl text-dark  w-[750px] h-[40px] px-3 pt-5 rounded-l focus:outline-none">
+      <!-- <button type="submit" class="bg-sky-500 text-white rounded-r px-2 md:px-3 py-0 md:py-1">Search</button> -->
+      <select v-model="keyword" id="pricingType" name="pricingType"
+        class="w-[140px] h-[40px] border border-gray mt-3 focus:outline-none rounded-2xl px-2 md:px-3 py-0 md:py-1 tracking-wider">
+        <option value="" disabled selected>Kategori</option>
+        <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.id">{{ kategori.nama }}</option>
+      </select>
+    </div>
+  </form>
+  </div>
+
 <div class="bg-lavender h-[100vh] ">
     <div class="carousel rounded-box w-[800px] bg-white p-8" style="margin-left: 390px;">
         <div v-for="(book, i) in bookFiltered" :key='i' class="carousel-item w-1/2 ps-8">
@@ -45,6 +49,8 @@
 const supabase = useSupabaseClient()
 const books = ref([])
 const keyword = ref('')
+const kategories = ref('')
+
 
 const getBooks = async () => {
     const {data, error} = await supabase.from('buku')
@@ -61,8 +67,16 @@ const bookFiltered = computed (() => {
     })
 }) 
 
+
+const getKategori = async() => {
+    const {data} = await supabase.from('kategori_buku').select('*')
+    if(data) kategories.value = data
+
+}
+
 onMounted(() => {
     getBooks()
+    getKategori()
 }) 
 </script>
 
@@ -76,4 +90,9 @@ a{
   transform: translate(0) scale(1);
   visibility: visible;
 }
+
+.flex{
+    font-family: "Josefin Sans", sans-serif;
+}
+
 </style>
