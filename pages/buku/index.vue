@@ -15,7 +15,7 @@
       <select v-model="keyword" id="pricingType" name="pricingType"
         class="w-[140px] h-[40px] border border-gray mt-3 focus:outline-none rounded-2xl px-2 md:px-3 py-0 md:py-1 tracking-wider">
         <option value="" disabled selected>Kategori</option>
-        <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.id">{{ kategori.nama }}</option>
+        <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.nama">{{ kategori.nama }}</option>
       </select>
     </div>
   </form>
@@ -35,7 +35,7 @@
         </div> 
     </div>
     </div>
-    <div class="w-screen h-screen bg-lavender pt-10">
+    <div class="w-full h-screen bg-lavender pt-10">
                 <NuxtLink to="/buku/"><button class="btn btn-circle ml-36 shadow-inner shadow-darkgray">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
@@ -58,21 +58,23 @@ const getBooks = async () => {
     .ilike('judul', `%${keyword.value}%`)
     if (data) books.value = data
 }
-const bookFiltered = computed (() => {
-    return books.value.filter((b) => {
-        return (
-            b.judul?.toLowerCase().includes(keyword.value?.toLowerCase()) ||
-            b.kategori?.nama.toLowerCase().includes(keyword.value?.toLowerCase())
-        )
-    })
-}) 
-
 
 const getKategori = async() => {
     const {data} = await supabase.from('kategori_buku').select('*')
     if(data) kategories.value = data
 
 }
+
+const bookFiltered = computed (() => {
+    return books.value.filter((b) => {
+        return (
+            b.judul?.toLowerCase().includes(keyword.value?.toLowerCase) ||
+            b.kategori?.nama.toLowerCase().includes(keyword.value?.toLowerCase)
+        )
+    })
+}) 
+
+
 
 onMounted(() => {
     getBooks()

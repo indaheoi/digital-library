@@ -16,8 +16,8 @@
     </div> 
   </div>
 
-  <div class="md:px-32 py-5 w-full " style="background-color:lavender; height: 100vh;">
-    <div class="shadow overflow-hidden rounded border-b border-gray-200">
+  <div class="px-32 py-5 w-full bg-[lavender]">
+    <div class="shadow overflow-hidden table-fixed rounded border-b border-gray-200">
       <table class="min-w-full bg-white ">
         <thead class="bg-navy text-white">
           <tr>
@@ -46,15 +46,15 @@
       </tbody>
       </table>
     </div>
+    
+    
+                    <NuxtLink to="/pengunjung/"><button class="btn btn-circle ms-18 mt-16 shadow-inner shadow-darkgray">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                      </svg>               
+                    </button></NuxtLink>
+      
   </div>
-
-
-                <NuxtLink to="/pengunjung/"><button class="btn btn-circle ml-24 shadow-inner shadow-darkgray">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-                  </svg>               
-                </button></NuxtLink>
-  
 </template>
 
 <script setup>
