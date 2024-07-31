@@ -2,7 +2,7 @@
 
     <!-- header -->
     <div class="navbar bg-white fixed z-10">
-        <div class="text ps-10">
+        <div class="text  ms-20 ps-10">
             <a class="text-2xl text-gray mt-2 ps-10">Form Kunjungan</a>
         </div>
     </div>
@@ -29,7 +29,7 @@
                                 class="shadow-inner block mb-2 text-sm font-medium text-darkgray  dark:text-dark ">Kategori</label>
                             <select v-model="form.keanggotaan" id="keanggotaan"
                                 class="bg-lightgray border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 light:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option value="">Keanggotaan</option>
+                               
                                 <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}
                                 </option>
 
